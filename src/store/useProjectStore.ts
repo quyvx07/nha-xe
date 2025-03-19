@@ -1,6 +1,6 @@
+import { defaultLocale } from "@/lib/constants";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { defaultLocale } from "@/middleware";
 
 interface ProjectState {
   locale: string;

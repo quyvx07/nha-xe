@@ -24,40 +24,37 @@ export const metadata: Metadata = {
 
 interface AdminLayoutProps {
   children: React.ReactNode;
-  params: { lang: string };
 }
 
-async function AdminLayout({ children, params }: AdminLayoutProps) {
+async function AdminLayout({ children }: AdminLayoutProps) {
   //   const session = await getSession();
   //   if (!session || !session.user) {
   //     redirect(`/${params.lang}/login?from=/admin`);
   //   }
 
-  const { lang } = await params;
-
   const navItems = [
     {
-      href: `/${lang}/admin/dashboard`,
+      href: `/dashboard`,
       label: "Dashboard",
       icon: <LayoutDashboard className="w-6 h-6" />,
     },
     {
-      href: `/${lang}/admin/trips`,
+      href: `/trips`,
       label: "Chuyến xe",
       icon: <Car className="w-6 h-6" />,
     },
     {
-      href: `/${lang}/admin/drivers`,
+      href: `/drivers`,
       label: "Tài xế",
       icon: <Users className="w-6 h-6" />,
     },
     {
-      href: `/${lang}/admin/analytics`,
+      href: `/analytics`,
       label: "Thống kê",
       icon: <BarChart3 className="w-6 h-6" />,
     },
     {
-      href: `/${lang}/admin/settings`,
+      href: `/settings`,
       label: "Cài đặt",
       icon: <Settings className="w-6 h-6" />,
     },
@@ -139,7 +136,7 @@ async function AdminLayout({ children, params }: AdminLayoutProps) {
           </div>
           <div className="p-4 border-t dark:border-gray-700">
             <Link
-              href={`/${lang}/logout`}
+              href={`/logout`}
               className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
             >
               <LogOut className="w-5 h-5" />

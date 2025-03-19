@@ -6,7 +6,6 @@ export const useLocale = () => {
   const { locale, setLocale } = useProjectStore();
 
   const changeLocale = (newLocale: string) => {
-
     // Cập nhật trong store
     setLocale(newLocale);
 
