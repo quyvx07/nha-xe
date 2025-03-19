@@ -16,12 +16,7 @@ import {
 } from 'lucide-react';
 import { adminRoutes } from '@/lib/routes';
 
-interface SettingsPageProps {
-  params: Promise<{ lang: string }>;
-}
-
-export default function SettingsPage({ params }: SettingsPageProps) {
-  const { lang } = React.use(params as Promise<{ lang: string }>);
+export default function SettingsPage() {
   const pathname = usePathname();
   
   const settingsMenu = [
