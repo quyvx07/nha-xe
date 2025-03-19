@@ -5,21 +5,18 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft } from "lucide-react";
-
+import { adminRoutes } from "@/lib/routes";
 interface SettingsLayoutProps {
   children: React.ReactNode;
-  params: Promise<{ lang: string }>;
 }
 
 export default function SettingsLayout({
   children,
-  params,
 }: SettingsLayoutProps) {
   const pathname = usePathname();
-  const { lang } = React.use(params as Promise<{ lang: string }>);
 
   // Chỉ hiển thị nút back khi đang ở trang con
-  const isSubPage = pathname !== `/${lang}/admin/settings`;
+  const isSubPage = pathname !== adminRoutes.settings();
 
   return (
     <div className="container max-w-7xl mx-auto pb-20">
@@ -31,7 +28,7 @@ export default function SettingsLayout({
             asChild
             className="gap-2 pl-0 hover:pl-2 transition-all duration-200 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
           >
-            <Link href={`/${lang}/admin/settings`}>
+            <Link href={adminRoutes.settings()}>
               <ChevronLeft className="h-4 w-4" />
               Quay lại cài đặt
             </Link>

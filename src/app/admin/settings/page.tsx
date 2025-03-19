@@ -14,6 +14,7 @@ import {
   Receipt,
   ChevronRight
 } from 'lucide-react';
+import { adminRoutes } from '@/lib/routes';
 
 interface SettingsPageProps {
   params: Promise<{ lang: string }>;
@@ -25,43 +26,43 @@ export default function SettingsPage({ params }: SettingsPageProps) {
   
   const settingsMenu = [
     {
-      href: `/${lang}/admin/settings/profile`,
+      href: adminRoutes.settings(),
       label: 'Thông tin cá nhân',
       description: 'Cập nhật thông tin cá nhân, email, số điện thoại, ngôn ngữ',
       icon: <User className="h-5 w-5" />
     },
     {
-      href: `/${lang}/admin/settings/appearance`,
+      href: adminRoutes.appearance(),
       label: 'Giao diện',
       description: 'Tuỳ chỉnh giao diện, chế độ tối, màu sắc hệ thống',
       icon: <Palette className="h-5 w-5" />
     },
     {
-      href: `/${lang}/admin/settings/notifications`,
+      href: adminRoutes.notifications(),
       label: 'Thông báo',
       description: 'Quản lý tùy chọn thông báo email, đẩy và thiết bị',
       icon: <Bell className="h-5 w-5" />
     },
     {
-      href: `/${lang}/admin/settings/security`,
+      href: adminRoutes.security(),
       label: 'Bảo mật',
       description: 'Thay đổi mật khẩu, cài đặt xác thực hai yếu tố',
       icon: <Shield className="h-5 w-5" />
     },
     {
-      href: `/${lang}/admin/settings/company`,
+      href: adminRoutes.company(),
       label: 'Thông tin công ty',
       description: 'Cập nhật thông tin công ty, địa chỉ, liên hệ',
       icon: <Building className="h-5 w-5" />
     },
     {
-      href: `/${lang}/admin/settings/billing`,
+      href: adminRoutes.billing(),
       label: 'Thanh toán',
       description: 'Quản lý phương thức thanh toán, hóa đơn, gói dịch vụ',
       icon: <Receipt className="h-5 w-5" />
     },
     {
-      href: `/${lang}/admin/settings/help`,
+      href: adminRoutes.help(),
       label: 'Trợ giúp & Hỗ trợ',
       description: 'Trung tâm trợ giúp, tài liệu hướng dẫn, liên hệ hỗ trợ',
       icon: <HelpCircle className="h-5 w-5" />

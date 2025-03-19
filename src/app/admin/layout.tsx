@@ -1,13 +1,6 @@
-// import { getSession } from "next-auth/react";
-// import { redirect } from "next/navigation";
 import Link from "next/link";
-// import { Button } from "@/components/ui/button";
-// import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-// import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-// import { Menu } from "lucide-react";
 import type { Metadata } from "next";
 
-// Navigation icons - import your preferred icons here
 import {
   LayoutDashboard,
   Car,
@@ -16,6 +9,7 @@ import {
   Settings,
   LogOut,
 } from "lucide-react";
+import { adminRoutes } from "@/lib/routes";
 
 export const metadata: Metadata = {
   title: "Quản lý nhà xe Hải Dương - Hà Nội",
@@ -34,27 +28,27 @@ async function AdminLayout({ children }: AdminLayoutProps) {
 
   const navItems = [
     {
-      href: `/dashboard`,
+      href: adminRoutes.dashboard(),
       label: "Dashboard",
       icon: <LayoutDashboard className="w-6 h-6" />,
     },
     {
-      href: `/trips`,
+      href: adminRoutes.trips(),
       label: "Chuyến xe",
       icon: <Car className="w-6 h-6" />,
     },
     {
-      href: `/drivers`,
+      href: adminRoutes.drivers(),
       label: "Tài xế",
       icon: <Users className="w-6 h-6" />,
     },
     {
-      href: `/analytics`,
+      href: adminRoutes.analytics(),
       label: "Thống kê",
       icon: <BarChart3 className="w-6 h-6" />,
     },
     {
-      href: `/settings`,
+      href: adminRoutes.settings(),
       label: "Cài đặt",
       icon: <Settings className="w-6 h-6" />,
     },

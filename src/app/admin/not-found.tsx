@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, AlertCircle } from 'lucide-react';
-import { adminRoutes } from '@/lib/routes';
 
 export default function AdminNotFound() {
   return (
@@ -27,7 +26,7 @@ export default function AdminNotFound() {
         
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild variant="default">
-            <Link href={adminRoutes.dashboard()} className="flex items-center">
+            <Link href="/admin/dashboard" className="flex items-center">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Về Dashboard
             </Link>
